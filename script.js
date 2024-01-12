@@ -1,31 +1,28 @@
 const prompt = require('prompt-sync')();
 const { Palavra, Jogo } = require('./classes.js');
 
-let palavra1 = new Palavra("OMITIR");
-let palavra2 = new Palavra("ALMONDEGAS");
-let palavra3 = new Palavra("LEAO");
+let palavra1 = new Palavra("PURPURA");
+let palavra2 = new Palavra("CONDICAO");
+let palavra3 = new Palavra("OLHAR");
 let jogo = new Jogo();
 
-console.log(palavra1.getPropriedades());
-console.log(palavra2.getPropriedades());
-console.log(palavra3.getPropriedades());
-
-const palavras = [palavra1, palavra2, palavra3]
+jogo.palavras = [palavra1, palavra2, palavra3]
 let suaTentativa = '';
 const quantErros = 10;
 
 const jogar = () => {
-    let indice = Math.floor(Math.random() * palavras.length);
-    let escolhida = palavras[indice];
+    let indice = Math.floor(Math.random() * jogo.palavras.length);
+    let escolhida = jogo.palavras[indice];
 
-    /* for(let i = 0; i <= quantErros;){
-        suaTentativa = prompt('Digite uma letra: ');
-    } */
+    console.log(escolhida.getCaracteres())
 
     do {
-        suaTentativa = prompt('Digite uma letra: ');
+        console.log(`${escolhida.getTentativas() + 1}ª tentativa:`);
+        suaTentativa = prompt('Digite uma letra: ').toUpperCase();
         escolhida.setTeste(suaTentativa, jogo);
-    } while (jogo.Andamento() != false);
+    } while (jogo.getAndamento() != false);
 }
+
+console.log('Seja bem-vindo ao Jogo da Forca em JavaScript, aqui, você deve adivinhar a palavra digitando letra por letra, ou até mesmo a palavra completa, em até 10 tentativas, desconsiderando acentos e pontuação.')
 
 jogar()

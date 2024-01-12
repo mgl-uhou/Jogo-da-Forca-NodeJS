@@ -3,14 +3,19 @@ class Palavra {
         this._palavra = palavra.split('');
         this._quantLetra = this.getPalavra().length;
         this._caracteres = this.defChar();
+        this._tentativas = 0;
     }
 
     getPalavra(){
-        return this._palavra;
+        return this._palavra.join('');
     }
 
-    getPropriedades(){
+    getCaracteres(){
         return this._caracteres;
+    }
+
+    getTentativas(){
+        return this._tentativas;
     }
 
     defChar(){
@@ -22,31 +27,35 @@ class Palavra {
     }
 
     setTeste(teste, jogo){
-        for(let i = 0; i <= this._palavra; i++){
-            if(teste == this._palavra[i]){
+        for(let i = 0; i < this._quantLetra; i++){
+            if(teste === this._palavra[i]){
                 this._caracteres[i] = teste;
             }
         }
-        if (teste == this._palavra.join('')){
-            console.log(`You Win! The word is ${this._palavra.join('')}`);
+        if (teste === this.getPalavra() || this._caracteres.join('') === this._palavra.join('')){
+            console.log(`Você Ganhou! A palavra é ${this._palavra.join('')}`);
+            jogo.setAndamento(false);
         }
-        else if(tentativas > 10){
-            console.log(`You Loose! The word is ${this._palavra.join('')}`);
-            jogo.Andamento = false;
+        else if(this._tentativas >= 9){
+            console.log(`Você Perdeu! A palavra é ${this._palavra.join('')}`);
+            jogo.setAndamento(false);
         }
+        this._tentativas++;
+        console.log(teste !== this.getPalavra() && jogo.getAndamento() === true ? this.getCaracteres() : this.getPalavra().split(""));
     }
 };
 
 class Jogo{
     constructor(){
+        this.palavras = [];
         this._andamento = true;
     }
 
-    get Andamento(){
+    getAndamento(){
         return this._andamento;
     }
 
-    set Andamento(valor){
+    setAndamento(valor){
         this._andamento = valor;
     }
 }
