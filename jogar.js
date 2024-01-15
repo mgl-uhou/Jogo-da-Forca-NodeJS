@@ -20,6 +20,7 @@ const Jogar = (jogo, deNovo) => {
 
 
     let suaTentativa = '';
+    let letrasDigitadas = [];
     let vidas = ['❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️'];
 
     console.log(escolhida.getCaracteres().join(' '))
@@ -27,7 +28,7 @@ const Jogar = (jogo, deNovo) => {
 
     do {
         suaTentativa = prompt('Digite uma letra: ').toUpperCase();
-        escolhida.setTeste(suaTentativa, jogo, vidas);
+        escolhida.setTeste(suaTentativa, jogo, vidas, letrasDigitadas);
     } while (jogo.getAndamento() != false); // Loop que testa letras enquanto as vidas não acabarem
 
     prompt("Deseja jogar novamente (S/N)? ").toUpperCase() == "S" ? (deNovo = true, jogo.setAndamento(true)) : (deNovo = false, jogo.setAndamento(false));
