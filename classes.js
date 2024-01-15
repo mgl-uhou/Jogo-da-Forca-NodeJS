@@ -3,7 +3,6 @@ class Palavra {
         this._palavra = palavra.split('');
         this._quantLetra = this.getPalavra().length;
         this._caracteres = this.defChar();
-        this._tentativas = 0;
     }
 
     getPalavra(){
@@ -12,10 +11,6 @@ class Palavra {
 
     getCaracteres(){
         return this._caracteres;
-    }
-
-    getTentativas(){
-        return this._tentativas;
     }
 
     defChar(){
@@ -35,6 +30,7 @@ class Palavra {
             }
         }
         if(contem === false){
+            console.log('Essa letra não existe na palavra escolhida.');
             vidas.pop();
         }
         if (teste === this.getPalavra() || this._caracteres.join('') === this._palavra.join('')){
@@ -45,9 +41,7 @@ class Palavra {
             console.log(`Você Perdeu! A palavra é ${this._palavra.join('')}`);
             jogo.setAndamento(false);
         }
-        console.log(`Suas vidas: ${vidas.join(' ')}`)
-        this._tentativas++;
-        console.log(teste !== this.getPalavra() && jogo.getAndamento() === true ? this.getCaracteres().join("") : this.getPalavra());
+        return teste !== this.getPalavra() && jogo.getAndamento() === true ? console.log(this.getCaracteres().join(" ") + `\nSuas vidas: ${vidas.join(' ')}`) : true;
     }
 };
 

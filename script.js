@@ -1,14 +1,12 @@
-const { Palavra, Jogo } = require('./classes.js');
+const { _, Jogo } = require('./classes.js');
 const jogar = require("./jogar.js");
-
-let palavra1 = new Palavra("PURPURA");
-let palavra2 = new Palavra("CONDICAO");
-let palavra3 = new Palavra("OLHAR");
 let jogo = new Jogo();
 
-jogo.palavras = [palavra1, palavra2, palavra3]
-const quantErros = 10;
+console.log('Seja bem-vindo ao Jogo da Forca em JavaScript, aqui, você deve adivinhar a palavra digitando letra por letra, ou até mesmo a palavra completa, desconsiderando acentos e pontuação. Você tem sete vidas e a cada erro uma delas se vai, então pense bem antes de escolher uma letra ou uma palavra.');
 
-console.log('Seja bem-vindo ao Jogo da Forca em JavaScript, aqui, você deve adivinhar a palavra digitando letra por letra, ou até mesmo a palavra completa, desconsiderando acentos e pontuação. Você tem sete vidas e a cada erro uma delas se vai, então pense bem antes de escolher uma letra ou uma palavra.')
+let deNovo = false;
+do {
+    jogar(jogo, deNovo);
+} while (deNovo == true);
 
-jogar(jogo)
+console.log('Obrigado por jogar, espero que tenha gostado.');
