@@ -7,7 +7,7 @@ console.log('Seja bem-vindo ao Jogo da Forca em JavaScript, aqui, você deve adi
 
 let deNovo = false;
 do {
-    jogar(jogo, deNovo);
+    jogar(jogo);
     prompt("Deseja jogar novamente (S/N)? ").toUpperCase() == "S" ? (deNovo = true, jogo.setAndamento(true)) : (deNovo = false, jogo.setAndamento(false));
 } while (deNovo == true); // Loop para permitir que o jogador possa jogar de novo
 
