@@ -39,7 +39,7 @@ class Palavra {
             }
         }
         letrasDigitadas.push(teste);
-        if(contem === false){
+        if(contem === false && teste != this.getPalavra()){
             console.log('Essa letra não existe na palavra escolhida.');
             vidas.pop();
         }
