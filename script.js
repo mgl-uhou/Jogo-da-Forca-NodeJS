@@ -1,3 +1,4 @@
+const prompt = require('prompt-sync')();
 const { _, Jogo } = require('./classes.js');
 const jogar = require("./jogar.js");
 let jogo = new Jogo(); //Objeto de controle para o jogo
@@ -7,6 +8,7 @@ console.log('Seja bem-vindo ao Jogo da Forca em JavaScript, aqui, você deve adi
 let deNovo = false;
 do {
     jogar(jogo, deNovo);
+    prompt("Deseja jogar novamente (S/N)? ").toUpperCase() == "S" ? (deNovo = true, jogo.setAndamento(true)) : (deNovo = false, jogo.setAndamento(false));
 } while (deNovo == true); // Loop para permitir que o jogador possa jogar de novo
 
 console.log('Obrigado por jogar, espero que tenha gostado.');

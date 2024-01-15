@@ -17,21 +17,19 @@ const Jogar = (jogo, deNovo) => {
     }
     let indice = Math.floor(Math.random() * listaPalavras[tema].length); // Indice aleatório para a escolha da palavra.
     let escolhida = new Palavra(listaPalavras[tema][indice]); // Criando o objeto que é a palavra escolhida
-
-
+    
+    
     let suaTentativa = '';
     let letrasDigitadas = [];
     let vidas = ['❤️', '❤️', '❤️', '❤️', '❤️', '❤️', '❤️'];
-
+    
     console.log(escolhida.getCaracteres().join(' '))
     console.log(`Suas vidas: ${vidas.join(' ')}`);
-
+    
     do {
         suaTentativa = prompt('Digite uma letra: ').toUpperCase();
         escolhida.setTeste(suaTentativa, jogo, vidas, letrasDigitadas);
     } while (jogo.getAndamento() != false); // Loop que testa letras enquanto as vidas não acabarem
-
-    prompt("Deseja jogar novamente (S/N)? ").toUpperCase() == "S" ? (deNovo = true, jogo.setAndamento(true)) : (deNovo = false, jogo.setAndamento(false));
 }
 
 module.exports = Jogar;
