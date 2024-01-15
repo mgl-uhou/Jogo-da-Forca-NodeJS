@@ -5,7 +5,7 @@ class Palavra {
         this._caracteres = this.defChar();
     }
 
-    getPalavra(){
+    getPalavra() {
         return this._palavra.join('');
     }
 
@@ -13,7 +13,7 @@ class Palavra {
         return this._caracteres;
     }
 
-    defChar(){
+    defChar() /* Método que conta os caracteres da palavra e define quantos underlines ela deve ter. */ {
         let _ = [];
         for(let i = 0; i <= this._quantLetra - 1; i++){
             _.push("_");
@@ -21,8 +21,10 @@ class Palavra {
         return _;
     }
 
-    setTeste(teste, jogo, vidas){
-        let contem = false;
+    setTeste(teste, jogo, vidas) /* Setter que testa se a letra digitada pelo usuário faz parte da própria palavra */ {
+        let contem = false; // Variável de controle
+
+        // Lógicas e condições do Setter abaixo:
         for(let i = 0; i < this._quantLetra; i++){
             if(teste === this._palavra[i]){
                 this._caracteres[i] = teste;
@@ -47,7 +49,6 @@ class Palavra {
 
 class Jogo{
     constructor(){
-        this.palavras = [];
         this._andamento = true;
     }
 
