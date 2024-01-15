@@ -28,7 +28,7 @@ const listaPalavras = [
         `BANANA`,
         'ABACAXI',
         'MORANGO',
-        `UVAS`,
+        `UVA`,
         `PERA`,
         'MELANCIA',
         `PESSEGO`,
