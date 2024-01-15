@@ -26,22 +26,28 @@ class Palavra {
         return _;
     }
 
-    setTeste(teste, jogo){
+    setTeste(teste, jogo, vidas){
+        let contem = false;
         for(let i = 0; i < this._quantLetra; i++){
             if(teste === this._palavra[i]){
                 this._caracteres[i] = teste;
+                contem = true;
             }
+        }
+        if(contem === false){
+            vidas.pop();
         }
         if (teste === this.getPalavra() || this._caracteres.join('') === this._palavra.join('')){
             console.log(`Você Ganhou! A palavra é ${this._palavra.join('')}`);
             jogo.setAndamento(false);
         }
-        else if(this._tentativas >= 9){
+        else if(vidas.length == 0){
             console.log(`Você Perdeu! A palavra é ${this._palavra.join('')}`);
             jogo.setAndamento(false);
         }
+        console.log(`Suas vidas: ${vidas.join(' ')}`)
         this._tentativas++;
-        console.log(teste !== this.getPalavra() && jogo.getAndamento() === true ? this.getCaracteres() : this.getPalavra().split(""));
+        console.log(teste !== this.getPalavra() && jogo.getAndamento() === true ? this.getCaracteres().join("") : this.getPalavra());
     }
 };
 

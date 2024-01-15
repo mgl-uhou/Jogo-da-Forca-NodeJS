@@ -9,6 +9,6 @@ let jogo = new Jogo();
 jogo.palavras = [palavra1, palavra2, palavra3]
 const quantErros = 10;
 
-console.log('Seja bem-vindo ao Jogo da Forca em JavaScript, aqui, você deve adivinhar a palavra digitando letra por letra, ou até mesmo a palavra completa, em até 10 tentativas, desconsiderando acentos e pontuação.')
+console.log('Seja bem-vindo ao Jogo da Forca em JavaScript, aqui, você deve adivinhar a palavra digitando letra por letra, ou até mesmo a palavra completa, desconsiderando acentos e pontuação. Você tem sete vidas e a cada erro uma delas se vai, então pense bem antes de escolher uma letra ou uma palavra.')
 
 jogar(jogo)
