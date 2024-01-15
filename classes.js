@@ -21,16 +21,24 @@ class Palavra {
         return _;
     }
 
-    setTeste(teste, jogo, vidas) /* Setter que testa se a letra digitada pelo usuário faz parte da própria palavra */ {
+    setTeste(teste, jogo, vidas, letrasDigitadas) /* Setter que testa se a letra digitada pelo usuário faz parte da própria palavra */ {
         let contem = false; // Variável de controle
 
-        // Lógicas e condições do Setter abaixo:
+        // Lógicas e condições do setter abaixo:
         for(let i = 0; i < this._quantLetra; i++){
             if(teste === this._palavra[i]){
                 this._caracteres[i] = teste;
                 contem = true;
             }
         }
+        for(let i = 0; i <= letrasDigitadas.length; i++) /* Loop de controle para saber se o usuário já digitou a letra */ {
+            if(teste == letrasDigitadas[i]){
+                console.log("Você já digitou essa letra.");
+                console.log(`Suas vidas: ${vidas.join(' ')}`)
+                return true;
+            }
+        }
+        letrasDigitadas.push(teste);
         if(contem === false){
             console.log('Essa letra não existe na palavra escolhida.');
             vidas.pop();
