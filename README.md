@@ -1,4 +1,10 @@
-Jogo de adivinhação de palavras. Uma variação do renomado Jogo da Forca, agora para console, com sistema de vidas e mais.
+# Personal project.
 
-Nesse jogo, o jogador, assim como um gato, "possui" sete vidas, e a cada erro na tentativa de adivinhar a palavra, uma das vidas lhe é removida. 
-Joguem, e sejam felizes nessa variante do Jogo da Forca!
+Cat game
+
+Word guessing game. A variation on the famous Hangman game, but made to run on a console, with a life system and more.
+
+In this game, the player, like a cat, "possesses" seven lives (Brazilian culture), and for every mistake in trying to guess the word, one of the lives is removed. 
+Play and be happy in this variant of Hangman!
+
+To test it out, download the files and run the script.js file using NodeJS.
