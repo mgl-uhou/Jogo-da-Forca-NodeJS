@@ -1,10 +1,23 @@
-# Personal project.
+#   Jogo do Gato
 
-Cat game
+## Sobre o Projeto
+Script que trata de um jogo semelhante ao jogo da forca. 
+Feito como atividade extra da matéria de Programação Orientada à Objetos do curso Técnico em Desenvolvimento de Sistemas para exercitar alguns dos conceitos aprendidos.
 
-Word guessing game. A variation on the famous Hangman game, but made to run on a console, with a life system and more.
+## Tecnologias
+- NodeJS
 
-In this game, the player, like a cat, "possesses" seven lives (Brazilian culture), and for every mistake in trying to guess the word, one of the lives is removed. 
-Play and be happy in this variant of Hangman!
+# Como Executar o Projeto
+**Pré requisitos**: NodeJS.
 
-To test it out, download the files and run the script.js file using NodeJS.
+1. Faça um clone do projeto executando o seguinte comando em bash:.
+  ```bash
+  git clone https://github.com/mgl-uhou/Jogo-do-Gato-NodeJS.git
+  ```
+2. Na pasta raiz do arquivo, abra o terminal e execute o seguinte comando:
+	```shell
+	node script.js
+	```
+3. Com isso, já pode testar e se divertir com o jogo.
+
+> Miguel Laurentino
